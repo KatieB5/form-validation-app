@@ -1,9 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Introduction
+I recently worked on a client project to build an interactive and responsive frontend UI for an intelligent quoting app, as part of my day job. Unfortunately, I couldn't share the project or continue working on it after leaving the company, so I decided to rebuild something similar! This would allow me to get more practice with the tech stack, tools and libraries (3/5 of those used in the client proejct were new to me).
+
+Tech stack for previous client project: React, TypeScript, Tailwind CSS, zod, and shadcn/ui.
+
+Tech stack for this project: [Next.js](https://nextjs.org/), TypeScript, Tailwind CSS, zod, and shadcn/ui.
+
+I've used Next.js instead of React in case I want to deploy this project and take it further than just being a dev frontend UI 🙃
 
 ## Getting Started
 
-First, run the development server:
-
+1. Fork and clone this repo
+2. ``cd`` into the form-validation-app directory
+3. Run ``npm install``
+4. Run the development server:
 ```bash
 npm run dev
 # or
@@ -13,24 +22,6 @@ pnpm dev
 # or
 bun dev
 ```
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
