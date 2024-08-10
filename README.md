@@ -1,5 +1,5 @@
 # Introduction
-I recently worked on a client project to build an interactive and responsive frontend UI for an intelligent quoting app, as part of my day job. Unfortunately, I couldn't share the project or continue working on it after leaving the company, so I decided to rebuild something similar! This would allow me to get more practice with the tech stack, tools and libraries (3/5 of those used in the client proejct were new to me).
+I recently worked on a client project to build an interactive and responsive frontend UI for an intelligent quoting app, as part of my day job. Unfortunately, I couldn't share the project or continue working on it after leaving the company, so I decided to rebuild something similar! This would allow me to get more practice with the tech stack, tools and libraries as 3/5 of those used in the client project were new to me.
 
 Tech stack for previous client project: React, TypeScript, Tailwind CSS, zod, and shadcn/ui.
 
