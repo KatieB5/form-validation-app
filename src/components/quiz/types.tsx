@@ -19,16 +19,16 @@ export const quizFormSchema = z.object({
       "Quiet, mysterious, incredibly loyal and emotionally complex",
       "Loyal, fierce, witty and protective",
       "Charming with a darker side, fiercely protective, regal",
-      "Ambitious, cunning, a good negotiator, daddy issues",
+      "Ambitious, patient, a good negotiator, daddy issues",
       "Rebellious, fiercely protective, strong sense of justice and loyal"
     ],
     {
       required_error: "Please select book boyfriend personality traits.",
     }
   ),
-  power: z.array(z.string()).refine((value) => value.length === 2, {
-    message: 'You must select exactly two items.',
-  }),
+  // power: z.array(z.string()).refine((value) => value.length === 2, {
+  //   message: 'You must select exactly two items.',
+  // }),
 });
 
 export type QuizForm = z.infer<typeof quizFormSchema>;
