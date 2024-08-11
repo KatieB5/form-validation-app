@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { quizFormSchema, QuizForm } from "./types";
 
 import { Button } from "@/app/ui/button";
 import {
@@ -16,23 +17,14 @@ import {
 } from "@/app/ui/form";
 import { Input } from "@/app/ui/input";
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
-
-export function ProfileForm() {
+export function Quiz() {
   // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
+  const form = useForm<QuizForm>({
+    resolver: zodResolver(quizFormSchema)
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: QuizForm) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
@@ -43,10 +35,10 @@ export function ProfileForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
-          name="username"
+          name="transportation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Select a mode of transport</FormLabel>
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>

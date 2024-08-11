@@ -11,13 +11,11 @@ import { DarkModeToggle } from "./DarkModeToggle";
 export const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Form", href: "/form" },
+    { name: "Quiz", href: "/quiz" },
     {
       name: "Dashboard",
       href: "/dashboard",
     },
-    { name: "TBC", href: "/TBC" },
-    { name: "TBC", href: "/TBC" },
     { name: "TBC", href: "/TBC" }
   ];
 
