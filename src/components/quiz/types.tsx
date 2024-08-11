@@ -26,9 +26,9 @@ export const quizFormSchema = z.object({
       required_error: "Please select book boyfriend personality traits.",
     }
   ),
-  // power: z.array(z.string()).refine((value) => value.length === 2, {
-  //   message: 'You must select exactly two items.',
-  // }),
+  power: z.array(z.string()).refine((value) => value.length === 2, {
+    message: 'You must select exactly two items.',
+  }),
 });
 
 export type QuizForm = z.infer<typeof quizFormSchema>;

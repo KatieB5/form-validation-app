@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { quizFormSchema, QuizForm } from "./types";
+import { items } from "./checkboxItems";
 
 import { Button } from "@/app/ui/button";
 import {
@@ -23,11 +24,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/ui/select";
+import { Checkbox } from "@/app/ui/checkbox";
 
 export function Quiz() {
   // 1. Define your form.
   const form = useForm<QuizForm>({
     resolver: zodResolver(quizFormSchema),
+    defaultValues: {
+      power: []
+    }
   });
 
   // 2. Define a submit handler.
@@ -103,12 +108,67 @@ export function Quiz() {
                   <SelectItem value="Quiet, mysterious, incredibly loyal and emotionally complex">
                     Quiet, mysterious, incredibly loyal and emotionally complex
                   </SelectItem>
-                  <SelectItem value="Loyal, fierce, witty and protective">Loyal, fierce, witty and protective</SelectItem>
-                  <SelectItem value="Charming with a darker side, fiercely protective, regal">Charming with a darker side, fiercely protective, regal</SelectItem>
-                  <SelectItem value="Ambitious, patient, a good negotiator, daddy issues">Ambitious, patient, a good negotiator, daddy issues</SelectItem>
-                  <SelectItem value="Rebellious, fiercely protective, strong sense of justice and loyal">Rebellious, fiercely protective, strong sense of justice and loyal</SelectItem>
+                  <SelectItem value="Loyal, fierce, witty and protective">
+                    Loyal, fierce, witty and protective
+                  </SelectItem>
+                  <SelectItem value="Charming with a darker side, fiercely protective, regal">
+                    Charming with a darker side, fiercely protective, regal
+                  </SelectItem>
+                  <SelectItem value="Ambitious, patient, a good negotiator, daddy issues">
+                    Ambitious, patient, a good negotiator, daddy issues
+                  </SelectItem>
+                  <SelectItem value="Rebellious, fiercely protective, strong sense of justice and loyal">
+                    Rebellious, fiercely protective, strong sense of justice and
+                    loyal
+                  </SelectItem>
                 </SelectContent>
               </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="power"
+          render={() => (
+            <FormItem>
+              <div className="mb-4">
+                <FormLabel>Power type</FormLabel>
+              </div>
+              {items.map((item) => (
+                <FormField
+                  key={item.id}
+                  control={form.control}
+                  name="power"
+                  render={({ field }) => {
+                    return (
+                      <FormItem
+                        key={item.id}
+                        className="flex flex-row items-start space-x-3 space-y-0"
+                      >
+                        <FormControl>
+                          <Checkbox
+                            checked={field.value?.includes(item.id)}
+                            onCheckedChange={(checked) => {
+                              return checked
+                                ? field.onChange([...field.value, item.id])
+                                : field.onChange(
+                                    field.value?.filter(
+                                      (value) => value !== item.id
+                                    )
+                                  );
+                            }}
+                          />
+                        </FormControl>
+                        <FormLabel className="text-sm font-normal">
+                          {item.label}
+                        </FormLabel>
+                      </FormItem>
+                    );
+                  }}
+                />
+              ))}
               <FormMessage />
             </FormItem>
           )}

@@ -14,7 +14,7 @@ export default function Page() {
           </h1>
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-md text-black pt-4 pb-4">
+          <p className="text-md pt-4 pb-4">
             Fill in all of the fields and hit submit to find out your fantasy book boyfriend!
           </p>
           <Quiz />
