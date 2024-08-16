@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { quizFormSchema, QuizForm } from "./types";
 import { items } from "./checkboxItems";
 
@@ -31,8 +30,8 @@ export function Quiz() {
   const form = useForm<QuizForm>({
     resolver: zodResolver(quizFormSchema),
     defaultValues: {
-      power: []
-    }
+      power: [],
+    },
   });
 
   // 2. Define a submit handler.
@@ -174,7 +173,7 @@ export function Quiz() {
           )}
         />
 
-<FormField
+        <FormField
           control={form.control}
           name="hair"
           render={({ field }) => (
@@ -190,25 +189,19 @@ export function Quiz() {
                     <FormControl>
                       <RadioGroupItem value="Blackbrown" />
                     </FormControl>
-                    <FormLabel className="font-normal">
-                    Black/brown
-                    </FormLabel>
+                    <FormLabel className="font-normal">Black/brown</FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="Redcopper" />
                     </FormControl>
-                    <FormLabel className="font-normal">
-                    Red/copper
-                    </FormLabel>
+                    <FormLabel className="font-normal">Red/copper</FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="Blonde" />
                     </FormControl>
-                    <FormLabel className="font-normal">
-                    Blonde
-                    </FormLabel>
+                    <FormLabel className="font-normal">Blonde</FormLabel>
                   </FormItem>
                 </RadioGroup>
               </FormControl>

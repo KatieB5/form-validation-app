@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <div className="w-full pt-4 pb-16">
-      <div className="max-w-screen-xl w-full mx-auto px-6 sm:px-8 lg:px-16 grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
+    <div className="w-full pb-16">
+      <div className="max-w-screen-xl p-8 w-full mx-auto grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
         <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
           <Image
             src="/logo.png"
@@ -13,9 +13,9 @@ export const Footer = () => {
             height="100"
             className="rounded-lg"
           />
-          <p className="mb-4 pt-2">
-            <strong className="font-medium">KatieB5</strong> is the GitHub name
-            of Junior Software Developer, Katie B.
+          <p className="mb-4 pt-2 text-sm">
+            <strong className="font-medium">KatieB5</strong> is the GitHub
+            profile name of Junior Software Developer, Katie B.
           </p>
           <div className="flex w-full mt-2 mb-8 -mx-2">
             <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
@@ -46,14 +46,20 @@ export const Footer = () => {
               />
             </div>
           </div>
-          <p className="text-sm text-gray-400 pb-4">Logos sourced from www.freepik.com</p>
-          <p className="text-gray-400">©{new Date().getFullYear()} - KatieB5</p>
+          <p className="text-xs text-gray-400 pb-4">
+            Social media logos sourced from www.freepik.com. Hero image is Software engineer
+            by Delesign Graphics, licensed under Creative Commons Attribution
+            4.0 International (CC BY 4.0).
+          </p>
+          <p className="text-gray-400 text-sm">
+            ©{new Date().getFullYear()} - KatieB5
+          </p>
         </div>
         <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">
+          <p className="text-black-600 mb-4 font-medium text-md">
             This website
           </p>
-          <ul className="text-black-500 ">
+          <ul className="text-black-500 text-xs">
             <li className="my-2 hover:text-emerald-500 cursor-pointer transition-all">
               Home{" "}
             </li>
@@ -72,8 +78,8 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
-          <ul className="text-black-500">
+          <p className="text-black-600 mb-4 font-medium text-md">Engage</p>
+          <ul className="text-black-500 text-xs">
             <li className="my-2 hover:text-emerald-500 cursor-pointer transition-all">
               KatieB5 GitHub{" "}
             </li>
@@ -86,8 +92,8 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Legal</p>
-          <ul className="text-black-500">
+          <p className="text-black-600 mb-4 font-medium text-md">Legal</p>
+          <ul className="text-black-500 text-xs">
             <li className="my-2 hover:text-emerald-500 cursor-pointer transition-all">
               Privacy Policy{" "}
             </li>
