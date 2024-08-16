@@ -174,6 +174,49 @@ export function Quiz() {
           )}
         />
 
+<FormField
+          control={form.control}
+          name="hair"
+          render={({ field }) => (
+            <FormItem className="space-y-3">
+              <FormLabel>Hair colour</FormLabel>
+              <FormControl>
+                <RadioGroup
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                  className="flex flex-col space-y-1"
+                >
+                  <FormItem className="flex items-center space-x-3 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="Blackbrown" />
+                    </FormControl>
+                    <FormLabel className="font-normal">
+                    Black/brown
+                    </FormLabel>
+                  </FormItem>
+                  <FormItem className="flex items-center space-x-3 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="Redcopper" />
+                    </FormControl>
+                    <FormLabel className="font-normal">
+                    Red/copper
+                    </FormLabel>
+                  </FormItem>
+                  <FormItem className="flex items-center space-x-3 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="Blonde" />
+                    </FormControl>
+                    <FormLabel className="font-normal">
+                    Blonde
+                    </FormLabel>
+                  </FormItem>
+                </RadioGroup>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

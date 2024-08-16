@@ -29,6 +29,16 @@ export const quizFormSchema = z.object({
   power: z.array(z.string()).refine((value) => value.length === 2, {
     message: 'You must select exactly two items.',
   }),
+  hair: z.enum(
+    [
+      "Blackbrown",
+      "Redcopper",
+      "Blonde",
+    ],
+    {
+      required_error: "Please select a book boyfriend mode of transport.",
+    }
+  ),
 });
 
 export type QuizForm = z.infer<typeof quizFormSchema>;
