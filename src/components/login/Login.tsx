@@ -57,7 +57,7 @@ export function Login() {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your email address" {...field} />
+                  <Input placeholder="m@example.com" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +90,7 @@ export function Login() {
           </DialogFooter>
             <div className="flex justify-center items-center text-sm text-gray-400">
               Don&apos;t have an account?&nbsp;
-              <Link href="#" className="underline font-bold">
+              <Link href="/signup" className="underline font-bold">
                 Sign up
               </Link>
             </div>

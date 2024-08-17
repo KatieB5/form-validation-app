@@ -27,7 +27,7 @@ export const Navbar = () => {
       name: "Dashboard",
       href: "/dashboard",
     },
-    { name: "TBC", href: "/TBC" },
+    { name: "Sign up", href: "/signup" },
   ];
 
   return (
