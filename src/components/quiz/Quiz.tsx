@@ -14,7 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/app/ui/form";
-import { Input } from "@/app/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/app/ui/radio-group";
 import {
   Select,
@@ -24,9 +23,10 @@ import {
   SelectValue,
 } from "@/app/ui/select";
 import { Checkbox } from "@/app/ui/checkbox";
+import quizScoreCalculator from "./quizScoreFunction";
 
 export function Quiz() {
-  // 1. Define your form.
+
   const form = useForm<QuizForm>({
     resolver: zodResolver(quizFormSchema),
     defaultValues: {
@@ -34,11 +34,14 @@ export function Quiz() {
     },
   });
 
-  // 2. Define a submit handler.
+
   function onSubmit(values: QuizForm) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+
     console.log(values);
+
+    const quizScoresData = quizScoreCalculator(values);
+
+    console.log(quizScoresData);
   }
 
   return (

@@ -9,11 +9,6 @@ import {
 import { DarkModeToggle } from "./DarkModeToggle";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/app/ui/dialog";
 import { Button } from "@/app/ui/button";
@@ -44,8 +39,8 @@ export const Navbar = () => {
                       <Image
                         src="/logo.png"
                         alt="KatieB5 logo"
-                        width="100"
-                        height="100"
+                        width={100}
+                        height={100}
                         className="w-full h-full object-cover"
                       />
                     </div>

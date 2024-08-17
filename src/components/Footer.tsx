@@ -9,8 +9,8 @@ export const Footer = () => {
           <Image
             src="/logo.png"
             alt="KatieB5 logo"
-            width="100"
-            height="100"
+            width={100}
+            height={100}
             className="rounded-lg"
           />
           <p className="mb-4 pt-2 text-sm">

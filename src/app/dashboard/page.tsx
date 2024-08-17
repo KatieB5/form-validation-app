@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Dashboard from "@/components/dashboard/Dashboard";
 
 export default function Page() {

@@ -7,7 +7,6 @@ import Link from "next/link";
 
 import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
-import { Label } from "@/app/ui/label";
 import { Dialog, DialogTrigger } from "@/app/ui/dialog";
 import {
   Form,
