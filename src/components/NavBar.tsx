@@ -7,6 +7,17 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { DarkModeToggle } from "./DarkModeToggle";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/app/ui/dialog";
+import { Button } from "@/app/ui/button";
+import { Login } from "./login/Login";
 
 export const Navbar = () => {
   const navLinks = [
@@ -16,7 +27,7 @@ export const Navbar = () => {
       name: "Dashboard",
       href: "/dashboard",
     },
-    { name: "TBC", href: "/TBC" }
+    { name: "TBC", href: "/TBC" },
   ];
 
   return (
@@ -78,12 +89,16 @@ export const Navbar = () => {
                         {link.name}
                       </Link>;
                     })}
-                    <Link
-                      href="/"
-                      className="w-full px-6 py-2 mt-3 text-center text-white bg-emerald-800 rounded-md lg:ml-5"
-                    >
-                      Login
-                    </Link>
+                    <div className="mr-3 space-x-4 lg:flex nav__item">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button className="px-6 py-2 text-white bg-emerald-600 rounded-md md:ml-5">
+                            Login
+                          </Button>
+                        </DialogTrigger>
+                        <Login />
+                      </Dialog>
+                    </div>
                   </>
                 </DisclosurePanel>
               </div>
@@ -109,12 +124,14 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link
-            href="/"
-            className="px-6 py-2 text-white bg-emerald-600 rounded-md md:ml-5"
-          >
-            Login
-          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="px-6 py-2 text-white bg-emerald-600 rounded-md md:ml-5">
+                Login
+              </Button>
+            </DialogTrigger>
+            <Login />
+          </Dialog>
         </div>
       </nav>
     </div>
