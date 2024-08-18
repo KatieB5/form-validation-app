@@ -32,20 +32,37 @@ import {
   ChartTooltipContent,
 } from "@/app/ui/chart";
 import { Separator } from "@/app/ui/separator";
+import parseDataFromUrl from "./parseDataFromUrlFunction";
+import { useSearchParams } from "next/navigation";
+import { QuizScoreDataObject } from "./types";
+
+const defaultData = {quizScoreData:[
+  { name: "Rhys", score: 1 },
+  { name: "Cassian", score: 1 },
+  { name: "Azriel", score: 2 },
+  { name: "Tamlin", score: 3 },
+  { name: "Lucien", score: 4 },
+  { name: "Xaden", score: 5 },
+]};
 
 export default function Dashboard() {
+  const searchParams = useSearchParams()
+  const data  = searchParams.get('data');
+  const parsedData = data ? parseDataFromUrl(data) : defaultData;
+  console.log(parsedData);
+
+  const sortedData = parsedData.quizScoreData.sort((a: QuizScoreDataObject, b: QuizScoreDataObject) => (b.score - a.score))
+  console.log(sortedData);
+
   return (
     <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
       <div className="grid w-full gap-6 sm:grid-cols-2 lg:max-w-[22rem] lg:grid-cols-1 xl:max-w-[25rem]">
         <Card className="lg:max-w-md" x-chunk="charts-01-chunk-0">
           <CardHeader className="space-y-0 pb-2">
-            <CardDescription>Today</CardDescription>
             <CardTitle className="text-4xl tabular-nums">
-              12,584{" "}
-              <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
-                steps
-              </span>
+              Your scores{" "}
             </CardTitle>
+            <CardDescription>For each book boyfriend</CardDescription>
           </CardHeader>
           <CardContent>
             <ChartContainer
@@ -62,67 +79,26 @@ export default function Dashboard() {
                   left: -4,
                   right: -4,
                 }}
-                data={[
-                  {
-                    date: "2024-01-01",
-                    steps: 2000,
-                  },
-                  {
-                    date: "2024-01-02",
-                    steps: 2100,
-                  },
-                  {
-                    date: "2024-01-03",
-                    steps: 2200,
-                  },
-                  {
-                    date: "2024-01-04",
-                    steps: 1300,
-                  },
-                  {
-                    date: "2024-01-05",
-                    steps: 1400,
-                  },
-                  {
-                    date: "2024-01-06",
-                    steps: 2500,
-                  },
-                  {
-                    date: "2024-01-07",
-                    steps: 1600,
-                  },
-                ]}
+                data={parsedData.quizScoreData}
               >
                 <Bar
-                  dataKey="steps"
+                  dataKey="score"
                   fill="var(--color-steps)"
                   radius={5}
                   fillOpacity={0.6}
                   activeBar={<Rectangle fillOpacity={0.8} />}
                 />
                 <XAxis
-                  dataKey="date"
+                  dataKey="name"
                   tickLine={false}
                   axisLine={false}
                   tickMargin={4}
-                  tickFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      weekday: "short",
-                    });
-                  }}
                 />
                 <ChartTooltip
                   defaultIndex={2}
                   content={
                     <ChartTooltipContent
                       hideIndicator
-                      labelFormatter={(value) => {
-                        return new Date(value).toLocaleDateString("en-US", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        });
-                      }}
                     />
                   }
                   cursor={false}
@@ -153,16 +129,12 @@ export default function Dashboard() {
           </CardContent>
           <CardFooter className="flex-col items-start gap-1">
             <CardDescription>
-              Over the past 7 days, you have walked{" "}
-              <span className="font-medium text-foreground">53,305</span> steps.
-            </CardDescription>
-            <CardDescription>
-              You need{" "}
-              <span className="font-medium text-foreground">12,584</span> more
-              steps to reach your goal.
+              Based on the data provided, your ideal book boyfriend would be{" "}
+              <span className="font-medium text-foreground">{`${sortedData[0].name}`}</span>.
             </CardDescription>
           </CardFooter>
         </Card>
+
         <Card className="flex flex-col lg:max-w-md" x-chunk="charts-01-chunk-1">
           <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2 [&>div]:flex-1">
             <div>

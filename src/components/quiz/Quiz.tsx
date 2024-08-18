@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { quizFormSchema, QuizForm } from "./types";
 import { items } from "./checkboxItems";
-
 import { Button } from "@/app/ui/button";
 import {
   Form,
@@ -24,8 +23,12 @@ import {
 } from "@/app/ui/select";
 import { Checkbox } from "@/app/ui/checkbox";
 import quizScoreCalculator from "./quizScoreFunction";
+import formatDataForUrl from "./formatDataForUrlFunction";
+import { useRouter } from "next/navigation";
 
 export function Quiz() {
+
+  const router = useRouter();
 
   const form = useForm<QuizForm>({
     resolver: zodResolver(quizFormSchema),
@@ -42,6 +45,12 @@ export function Quiz() {
     const quizScoresData = quizScoreCalculator(values);
 
     console.log(quizScoresData);
+
+    const encodedQuizScoreData = formatDataForUrl(quizScoresData)
+
+    console.log(encodedQuizScoreData);
+
+    router.push(`/dashboard?data=${encodedQuizScoreData}`);
   }
 
   return (

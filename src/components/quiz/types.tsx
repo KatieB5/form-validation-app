@@ -42,3 +42,8 @@ export const quizFormSchema = z.object({
 });
 
 export type QuizForm = z.infer<typeof quizFormSchema>;
+
+export interface QuizScoresData {quizScoreData:{
+  name: string;
+  score: number;
+}[];}

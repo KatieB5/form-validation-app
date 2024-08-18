@@ -90,16 +90,16 @@ export default function quizScoreCalculator(values: QuizForm) {
     bookBfObject.lucien += 1;
   }
 
-  //data={[{name: "rhys", score: 20}]},
+  //data={quizScoreData:[{name: "rhys", score: 20}]},
 
-  const quizScoreData = [
-    { name: "rhys", score: bookBfObject.rhys },
-    { name: "cassian", score: bookBfObject.cassian },
-    { name: "azriel", score: bookBfObject.azriel },
-    { name: "tamlin", score: bookBfObject.tamlin },
-    { name: "lucien", score: bookBfObject.lucien },
-    { name: "xaden", score: bookBfObject.xaden },
-  ];
+  const quizScoreData = {quizScoreData:[
+    { name: "Rhys", score: bookBfObject.rhys },
+    { name: "Cassian", score: bookBfObject.cassian },
+    { name: "Azriel", score: bookBfObject.azriel },
+    { name: "Tamlin", score: bookBfObject.tamlin },
+    { name: "Lucien", score: bookBfObject.lucien },
+    { name: "Xaden", score: bookBfObject.xaden },
+  ]};
 
   return quizScoreData;
 }
