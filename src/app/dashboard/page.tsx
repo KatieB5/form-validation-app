@@ -1,7 +1,7 @@
 "use client";
 
 import Dashboard from "@/components/dashboard/Dashboard";
-import { Suspense } from 'react'
+import { Suspense } from "react";
 
 export default function Page() {
   return (
@@ -13,12 +13,13 @@ export default function Page() {
       </div>
       <div className="flex justify-between items-center">
         <p className="text-md pt-4 pb-4">
-          Take a look at your results from the quiz below! If you did not take the quiz, then the dashboard will be populated with default data. 
+          Take a look at your results from the quiz below! If you did not take
+          the quiz, then the dashboard will be populated with default data.
         </p>
       </div>
       <div className="flex flex-col gap-2">
         <Suspense>
-        <Dashboard />
+          <Dashboard />
         </Suspense>
       </div>
     </main>
