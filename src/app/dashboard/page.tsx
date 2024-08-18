@@ -1,6 +1,7 @@
 "use client";
 
 import Dashboard from "@/components/dashboard/Dashboard";
+import { Suspense } from 'react'
 
 export default function Page() {
   return (
@@ -16,7 +17,9 @@ export default function Page() {
         </p>
       </div>
       <div className="flex flex-col gap-2">
+        <Suspense>
         <Dashboard />
+        </Suspense>
       </div>
     </main>
   );
