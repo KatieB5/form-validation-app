@@ -17,6 +17,7 @@ Using this app, users can:
 
 ## Getting Started
 
+Dev mode:
 1. Fork and clone this repo
 2. ``cd`` into the form-validation-app directory
 3. Run ``npm install``
@@ -32,4 +33,6 @@ bun dev
 ```
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Production app:
+1. There's a production version of the site hosted on Vercel [here](https://form-validation-app-iota.vercel.app/).
 
