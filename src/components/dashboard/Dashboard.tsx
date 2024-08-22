@@ -140,8 +140,8 @@ export default function Dashboard() {
           <CardHeader className="p-4 pb-0">
             <CardTitle>Score percentage</CardTitle>
             <CardDescription>
-              See how the book boyfriends ranked according to your score
-              percentage!
+              See how the book boyfriends ranked according to the
+              percentage of your answers that matched to them!
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-4 p-4">
