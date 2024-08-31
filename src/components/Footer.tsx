@@ -49,7 +49,7 @@ export const Footer = () => {
           <p className="text-xs text-gray-400 pb-4">
             Social media logos sourced from www.freepik.com. Hero image is Software engineer
             by Delesign Graphics, licensed under Creative Commons Attribution
-            4.0 International (CC BY 4.0).
+            4.0 International (CC BY 4.0). Bookboyfriend characters are property of Sarah J Maas, and Rebecca Yarros.
           </p>
           <p className="text-gray-400 text-sm">
             ©{new Date().getFullYear()} - KatieB5
